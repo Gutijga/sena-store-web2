@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buso diario - Sena Store Web</title>
+    <link rel="stylesheet" href="Css/styles4.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/Logostore.png" alt="Logo">
+            </div>
+            <div class="titulo">
+                <h1>SENA STORE WEB</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="informacion.html">Información</a></li>
+                    <li><a href="Iniciosesion.html">Iniciar sesión</a></li>
+                    <li>
+                        <div class="carrito-container" id="carrito">
+                            <img src="img/carrito.png" alt="Carrito de Compras" class="carrito-icon">
+                            <span id="cart-count" class="cart-count">0</span>
+                            <!-- Contenido desplegable del carrito -->
+                            <div id="cartDropdown" class="cart-dropdown">
+                                <p id="cart-items">Cantidad de productos: 0</p>
+                                <hr class="separador"> <!-- Línea de separación -->
+                                <p id="cart-total">Precio total: $0</p>
+                                <button id="pagar-btn" onclick="location.href='Iniciosesion.html'">Pagar</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="productos-lista">
+            <div class="form-container" id="form-container">
+                <div class="formulario" id="primer-formulario">
+                    <form action="procesar_producto.php" method="POST" enctype="multipart/form-data">
+                        <h2 class="articulo-titulo">Título del Artículo</h2>
+                        <label for="imagen">Subir imagen del artículo:</label>
+                        <input type="file" id="imagen" name="imagen[]" accept="image/*" required onchange="previewImage(this)"><br><br>
+                    
+                        <label for="nombre">Nombre del artículo:</label>
+                        <input type="text" id="nombre" name="nombre" required oninput="updateTitle(this.value, this.closest('.formulario'))"><br><br>
+                    
+                        <label for="descripcion">Descripción del artículo:</label>
+                        <textarea id="descripcion" name="descripcion" rows="4" required></textarea><br><br>
+                    
+                        <label for="tallas">Tallas disponibles:</label>
+                        <div id="tallas-container">
+                            <div class="input-group">
+                                <input type="text" name="tallas[]" placeholder="Ej: S" required>
+                                <button type="button" onclick="addSize(this)">+</button>
+
+
+                            </div>
+                        </div><br><br>
+                    
+                        <label for="cantidad">Cantidad de productos:</label>
+                        <input type="number" id="cantidad" name="cantidad" min="1" required><br><br>
+                    
+                        <label for="valorSinIva">Valor sin IVA:</label>
+                        <input type="number" id="valorSinIva" name="valorSinIva" step="0.01" required><br><br>
+                    
+                        <label for="valorConIva">Valor con IVA:</label>
+                        <input type="number" id="valorConIva" name="valorConIva" step="0.01" required><br><br>
+                    
+                        <label for="estado">Estado del producto:</label>
+                        <select id="estado" name="estado">
+                            <option value="habilitado">Habilitado</option>
+                            <option value="deshabilitado">Deshabilitar</option>
+                        </select><br><br>
+                    
+                        <div class="button-container">
+                            <button type="button" class="btn-eliminar" onclick="removeForm(this)">Eliminar</button>
+                        </div>
+                    </form>
+                    
+                    
+                </div>                
+            </div>
+        </section>        
+    </main>
+    <div class="button-container">
+        <button type="button" class="btn-nuevo-producto" onclick="addNewProductForm()">Nuevo producto</button>
+        <button type="button" class="btn-guardar">Guardar</button>
+    </div>
+    
+    
+    <BR></BR>
+    <script src="js/nuevoproducto.js"></script>
+    <script src="js/registrotallas.js"></script>
+    <script src="js/imagenproducto.js"></script>
+
+    <div id="chatIcon" class="chat-icon" onclick="toggleChat()">
+        💬
+    </div>
+
+    <div id="chatBox" class="chat-box">
+        <div class="chat-header">
+            <span>Chatbot</span>
+            <button class="close-btn" onclick="toggleChat()">X</button>
+        </div>
+        <div id="chatContent" class="chat-content"></div>
+        <div id="options" class="chat-options">
+            <button onclick="chooseOption('tallas')">Tallas</button>
+            <button onclick="chooseOption('precios')">Precios</button>
+            <button onclick="chooseOption('envíos')">Envíos</button>
+            <button onclick="chooseOption('ubicacion')">Ubicación</button>
+            <button onclick="chooseOption('contacto')">Contacto</button>
+            <button onclick="chooseOption('personalización')">Personalización</button>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Sena Store Web</p>
+    </footer>
+    <script src="js/carrito.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>

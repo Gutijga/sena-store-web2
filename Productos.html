@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Sena Store Web</title>
+    <link rel="stylesheet" href="Css\styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/Logostore.png" alt="Logo">
+            </div>
+            <div class="titulo">
+                <h1>SENA STORE WEB</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="informacion.html">Información</a></li>
+                    <li><a href="Iniciosesion.html">Iniciar sesion</a></li>
+                    <li>
+                        <div class="carrito-container" id="carrito">
+                            <img src="img/carrito.png" alt="Carrito de Compras" class="carrito-icon">
+                            <span id="cart-count" class="cart-count">0</span>
+                            <!-- Contenido desplegable del carrito -->
+                            <div id="cartDropdown" class="cart-dropdown">
+                                <p id="cart-items">Cantidad de productos: 0</p>
+                                <hr class="invisible-line">
+                                <p id="cart-total">Precio total: $0</p>
+                                <button id="pagar-btn" onclick="location.href='Iniciosesion.html'">Pagar</button>
+                            </div>
+                        </div> 
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="productos-lista">
+            <h2>Catálogo de Productos</h2>
+            <div class="productos">
+                <div class="producto">
+                        <img src="img/busodiario.png" alt="Buso diario" width="300" height="400">
+                        <h4>Buso diario</h4>
+                        <p>Fabricado 100% en algodon</p>
+                        <p>Tallas S, M, L, XL</p>
+                        <h5>$50.000</h5>
+                     <a href="Buso%20diario.html"><button onclick="addToCart(1, 'busodiario', 50000)">Informacion</button></a>
+                </div>
+                <div class="producto">
+                        <img src="img/pantalondiario2.png" alt="Pantalón diario caqui" width="300" height="350">
+                        <h4>Pantalón diario caqui</h4>
+                        <p>Fabricado 100% en algodon</p>
+                        <p>Tallas S, M, L, XL</p>
+                        <h5>$80.000</h5>
+                    <a href="pantalon%20caqui.html"><button onclick="agregarAlCarrito('pantalon diario', 80000)">Informacion</button></a>
+                </div>
+                <div class="producto">
+                        <img src="img/botasdiario.png" alt="Botas" width="300" height="400">
+                        <h4>Botas diario</h4>
+                        <p>Fabricadas en cuero y caucho</p>
+                        <p>Tallas 36, 37, 38, 39...</p>
+                        <h5>$120.000</h5>
+                    <a href="botas%20diario.html"><button onclick="agregarAlCarrito('Botas diario', 120000)">Informacion</button></a>
+                </div>
+                <div class="producto">
+                        <img src="img\busofisica.png" alt="Buso fisica" width="300" height="400">
+                        <h4>Buso fisica</h4>
+                        <p>Fabricado 100% en algodon</p>
+                        <p>Tallas S, M, L, XL</p>
+                        <h5>$55.000</h5>
+                    <a href="buso%20fisica.html"><button onclick="agregarAlCarrito('Buso fisica', 55000)">Informacion</button></a>
+                </div>
+                <div class="producto">
+                        <img src="img\sudaderafisica.png" alt="sudadera fisica" width="300" height="400">
+                        <h4>Sudadera de cultura fisica</h4>
+                        <p>Fabricada en algodon y poliester</p>
+                        <p>Tallas S, M, L, XL</p>
+                        <h5>$50.000</h5>
+                    <a href="sudadera.html"><button onclick="agregarAlCarrito('sudadera fisica', 50000)">Informacion</button></a>
+                </div>
+                <div class="producto">
+                        <img src="img\zapatosfisica.png" alt="zapatos fisica" width="300" height="350">
+                        <h4>Zapatos de cultura fisica</h4>
+                        <p>Fabricados en cuero y caucho sintetico</p>
+                        <p>Tallas 36, 37, 38, 39...</p>
+                        <h5>$80.000</h5>
+                    <a href="zapatos%20cultura.html"><button onclick="agregarAlCarrito('zapatos fisica', 80000)">Informacion</button></a>
+                </div>
+                <div class="producto">
+                        <img src="img\oberol.png" alt="overol" width="300" height="350">
+                        <h4>Overol industrial</h4>
+                        <p>Fabricado 100% en algodon</p>
+                        <p>Tallas S, M, L, XL</p>
+                        <h5>$120.000</h5>
+                    <a href="overol%20industrial.html"><button onclick="agregarAlCarrito('overol', 120000)">Informacion</button></a>
+                </div>
+                <div class="producto">
+                        <img src="img\botasindustria.png" alt="botas industriales" width="300" height="500">
+                        <h4>Botas industriales</h4>
+                        <p>Fabricadas en cuero y caucho</p>
+                        <p>Tallas 36, 37, 38, 39...</p>
+                        <h5>$100.000</h5>
+                    <a href="botas%20industrial.html"><button onclick="agregarAlCarrito('botas indutriales', 100000)">Informacion</button></a>
+                </div>
+                <div class="producto">
+                        <img src="img\gafasseguridad.png" alt="gafas" width="300" height="400">
+                        <h4>Gafas de seguridad</h4>
+                        <p>Fabricadas en policarbonato</p>
+                        <p>Talla unica</p>
+                        <h5>$15.000</h5>
+                    <a href="gafas%20de%20seguridad.html"><button onclick="agregarAlCarrito('gafas', 15000)">Informacion</button></a>
+                </div>
+                <div class="producto">
+                        <img src="img\casco.png" alt="casco" width="300" height="400">
+                        <h4>Casco de seguridad</h4>
+                        <p>Fabricado en polietileno</p>
+                        <p>Diferentes clases: G, E, C.</p>
+                        <h5>$60.000</h5>
+                    <a href="casco%20de%20seguridad.html"><button onclick="agregarAlCarrito('casco', 60000)">Informacion</button></a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="chatIcon" class="chat-icon" onclick="toggleChat()">
+        💬
+    </div>
+
+    <!-- Ventana del chat -->
+    <div id="chatBox" class="chat-box">
+        <div class="chat-header">
+            <span>Chatbot</span>
+            <button class="close-btn" onclick="toggleChat()">X</button>
+        </div>
+        <div id="chatContent" class="chat-content">
+            <!-- Aquí irán los mensajes del chat -->
+        </div>
+        <div id="options" class="chat-options">
+            <!-- Opciones de preguntas -->
+            <button onclick="chooseOption('tallas')">Tallas</button>
+            <button onclick="chooseOption('precios')">Precios</button>
+            <button onclick="chooseOption('envíos')">Envíos</button>
+            <button onclick="chooseOption('ubicacion')">Ubicacion</button>
+            <button onclick="chooseOption('contacto')">Contacto</button>
+            <button onclick="chooseOption('personalización')">Personalización</button>
+        </div>
+    </div>
+    <br>
+
+<script src="js\chat.js"></script>
+    <footer>
+        <p>&copy; 2024 Sena Store Web</p>
+    </footer>
+    <script src="js\carrito.js"></script>
+    <script src="js\carrito2.js"></script>
+</body>
+</html>
+

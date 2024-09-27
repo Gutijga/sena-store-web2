@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información - Sena Store Web</title>
+    <link rel="stylesheet" href="Css\styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/Logostore.png" alt="Logo">
+            </div>
+            <div class="titulo">
+                <h1>SENA STORE WEB</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="informacion.html">Información</a></li>
+                    <li><a href="Iniciosesion.html">Iniciar sesion</a></li>
+                    <li>
+                        <div class="carrito-container" id="carrito">
+                            <img src="img/carrito.png" alt="Carrito de Compras" class="carrito-icon">
+                            <span id="cart-count" class="cart-count">0</span>
+                            <!-- Contenido desplegable del carrito -->
+                            <div id="cartDropdown" class="cart-dropdown">
+                                <p id="cart-items">Cantidad de productos: 0</p>
+                                <hr class="separador"> <!-- Línea de separación -->
+                                <p id="cart-total">Precio total: $0</p>
+                                <button id="pagar-btn" onclick="location.href='Iniciosesion.html'">Pagar</button>
+                            </div>
+                        </div>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        
+        <section class="informacion1">
+            <h2>Información</h2>
+            <h3><strong>Mision:</strong></h3>
+            <p>En Sena Store Web, nuestra misión es ofrecer indumentaria y uniformes de alta calidad a la comunidad del SENA, destacándonos por nuestra capacidad para satisfacer las necesidades específicas de cada usuario. Nos esforzamos por brindar un servicio en línea que combine eficiencia, confiabilidad y accesibilidad, garantizando una experiencia de compra fluida y segura. Nos comprometemos a proporcionar productos que no solo cumplan con los más altos estándares de calidad y durabilidad, sino que también reflejen la identidad y los valores de la institución. Valoramos la satisfacción de nuestros clientes y trabajamos continuamente para mejorar nuestros procesos y servicios, buscando siempre superar sus expectativas.</p>
+            <br>
+            <h3><strong>Vision:</strong></h3>
+            <p>Nuestra visión es posicionarnos como el proveedor líder en la industria de indumentaria y uniformes para el SENA, destacándonos por nuestra capacidad para ofrecer productos excepcionales y un servicio al cliente inigualable. Aspiramos a ser la primera opción para la comunidad del SENA, estableciendo un estándar en términos de calidad, innovación y atención personalizada. Queremos contribuir al fortalecimiento de la identidad y prestigio de la institución, adaptándonos a sus necesidades en constante evolución y apoyando su misión educativa y formativa. Buscamos ser reconocidos por nuestra capacidad para ofrecer soluciones integrales que no solo satisfagan las demandas actuales, sino que también anticipen y se adapten a las futuras.</p>
+        </section>
+        <section id="informacion">
+            <div class="informacion1">
+                <h2>Contactanos</h2>
+                <div class="contact-info">
+                    <div class="phone">
+                        <h3>Teléfono</h3>
+                        <p><a href="tel:+123456789">+57 301 8302303</a></p>
+                    </div>
+                    <div class="social-media">
+                        <h3>Redes:</h3>
+                        <ul>
+                                <li>
+                                    <a href="link" target="_blank">
+                                        <img src="img\iconwhats.png" alt="WhatsApp">
+                                        WhatsApp
+                                    </a>
+                                </li>
+                            <li>
+
+                                 <a href="link" target="_blank">
+                                    <img src="img\iconfacebook.png" alt="Facebook">
+                                    Facebook
+                                </a>
+                            </li>
+                            <li>
+                                <a href="link" target="_blank">
+                                    <img src="img\icontwr.png" alt="Twitter">
+                                    Twitter
+                                </a>
+                            </li>
+                            <li>
+                                <a href="link" target="_blank">
+                                    <img src="img\iconinstagram.png" alt="Instagram">
+                                    Instagram
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <div id="chatIcon" class="chat-icon" onclick="toggleChat()">
+            💬
+        </div>
+    
+        <!-- Ventana del chat -->
+        <div id="chatBox" class="chat-box">
+            <div class="chat-header">
+                <span>Chatbot</span>
+                <button class="close-btn" onclick="toggleChat()">X</button>
+            </div>
+            <div id="chatContent" class="chat-content">
+                <!-- Aquí irán los mensajes del chat -->
+            </div>
+            <div id="options" class="chat-options">
+                <!-- Opciones de preguntas -->
+                <button onclick="chooseOption('tallas')">Tallas</button>
+                <button onclick="chooseOption('precios')">Precios</button>
+                <button onclick="chooseOption('envíos')">Envíos</button>
+                <button onclick="chooseOption('ubicacion')">Ubicacion</button>
+                <button onclick="chooseOption('contacto')">Contacto</button>
+                <button onclick="chooseOption('personalización')">Personalización</button>
+            </div>
+        </div>
+        <br>
+    
+    <script src="js\chat.js"></script>
+    
+    <footer>
+        <p>&copy; 2024 Sena Store Web</p>
+    </footer>
+    <script src="js/carrito.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buso diario - Sena Store Web</title>
+    <link rel="stylesheet" href="Css/styles2.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/Logostore.png" alt="Logo">
+            </div>
+            <div class="titulo">
+                <h1>SENA STORE WEB</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="informacion.html">Información</a></li>
+                    <li><a href="Iniciosesion.html">Iniciar sesión</a></li>
+                    <li>
+                        <div class="carrito-container" id="carrito">
+                            <img src="img/carrito.png" alt="Carrito de Compras" class="carrito-icon">
+                            <span id="cart-count" class="cart-count">0</span>
+                            <!-- Contenido desplegable del carrito -->
+                            <div id="cartDropdown" class="cart-dropdown">
+                                <p id="cart-items">Cantidad de productos: 0</p>
+                                <hr class="separador"> <!-- Línea de separación -->
+                                <p id="cart-total">Precio total: $0</p>
+                                <button id="pagar-btn" onclick="location.href='Iniciosesion.html'">Pagar</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="productos-lista">
+            
+            <div class="productos">
+                <div class="producto">
+                    <img src="img\zapatosfisica.png" alt="Buso diario" width="350" height="350">
+                    <div class="producto-info">
+                        <center>
+                            <h4>Buso Diario</h4>
+                        </center>
+                        <p>Hecho 100% en algodón suave y transpirable, perfecto para mantenerte cómodo todo el día.</p>
+                        <center>
+                            <h5><label for="Tallas">Tallas:</label></h5>
+                        </center>
+                        <select name="" id="">
+                            <option value="34">34</option>
+                            <option value="35">35</option>
+                            <option value="36">36</option>
+                            <option value="37">37</option>
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                        </select>
+                        <br>
+                        <p>Disponible en tallas 34, 35, 36, 37, 38, 39, 40, 41, 42 y 43,x con un ajuste moderno que combina estilo y comodidad.</p>
+                        <center>
+                            <h5><label for="cantidad">CANTIDAD:</label></h5>
+                            <h5><span id="valor6">0</span></h5>
+                            <h5><label for="precio6">VALOR:</label></h5>
+                            <h5><span id="total6">$80.000</span></h5>
+                            <br>
+                            <script src="js/script6.js"></script>
+                        </center>
+                        <p>¡No te quedes sin los tuyos! Ofrecemos envíos rápidos y garantía de satisfacción.</p>
+                        <button type="button" class="btn" onclick="incremento6('valor6','total6',80000)">Sumar</button>
+                        <button type="button" class="btn" onclick="decremento6('valor6','total6',80000)">Restar</button>
+                        <center>
+                            <a href="Iniciosesion.html"><button onclick="agregarAlCarrito('valor6', 80000, 'zapatos cultura')">Agregar al carrito</button></a>
+                        </center>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="chatIcon" class="chat-icon" onclick="toggleChat()">
+        💬
+    </div>
+
+    <!-- Ventana del chat -->
+    <div id="chatBox" class="chat-box">
+        <div class="chat-header">
+            <span>Chatbot</span>
+            <button class="close-btn" onclick="toggleChat()">X</button>
+        </div>
+        <div id="chatContent" class="chat-content">
+            <!-- Aquí irán los mensajes del chat -->
+        </div>
+        <div id="options" class="chat-options">
+            <!-- Opciones de preguntas -->
+            <button onclick="chooseOption('tallas')">Tallas</button>
+            <button onclick="chooseOption('precios')">Precios</button>
+            <button onclick="chooseOption('envíos')">Envíos</button>
+            <button onclick="chooseOption('ubicacion')">Ubicacion</button>
+            <button onclick="chooseOption('contacto')">Contacto</button>
+            <button onclick="chooseOption('personalización')">Personalización</button>
+        </div>
+    </div>
+    <br>
+
+<script src="js\chat.js"></script>
+    <footer>
+        <p>&copy; 2024 Sena Store Web</p>
+    </footer>
+    <script src="js/carrito.js"></script>
+</body>
+</html>

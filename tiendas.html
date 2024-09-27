@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiendas - Sena Store Web</title>
+    <link rel="stylesheet" href="Css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/Logostore.png" alt="Logo" style="width: 100px;">
+            </div>
+            <div class="titulo">
+                <h1>SENA STORE WEB</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="informacion.html">Información</a></li>
+                    <li><a href="Iniciosesion.html">Iniciar sesión</a></li>
+                    <li>
+                        <div class="carrito-container" id="carrito">
+                            <img src="img/carrito.png" alt="Carrito de Compras" class="carrito-icon">
+                            <span id="cart-count" class="cart-count">0</span>
+                            <div id="cartDropdown" class="cart-dropdown">
+                                <p id="cart-items">Cantidad de productos: 0</p>
+                                <hr class="separador">
+                                <p id="cart-total">Precio total: $0</p>
+                                <button id="pagar-btn" onclick="location.href='Iniciosesion.html'">Pagar</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <br>
+
+    <main>
+        <section class="tiendas">
+            <h2>Encuentra Nuestras Tiendas</h2>
+            <div class="tienda">
+                <img src="img/tienda1.jpg" alt="Tienda Centro">
+                <h3>Tienda Centro</h3>
+                <p>Dirección: Calle Principal #123, Ciudad</p>
+                <p>Teléfono: (123) 456-7890</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.839846274078!2d-122.08424948469217!3d37.42199977982539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5b1d6b6d3f7%3A0x5b8d5f536f5c8c6!2sGoogleplex!5e0!3m2!1ses!2sus!4v1635742119791!5m2!1ses!2sus" loading="lazy"></iframe>
+            </div>
+            <div class="tienda">
+                <img src="img/tienda2.jpg" alt="Tienda Norte">
+                <h3>Tienda Norte</h3>
+                <p>Dirección: Avenida Secundaria #456, Ciudad</p>
+                <p>Teléfono: (987) 654-3210</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.839846274078!2d-122.08424948469217!3d37.42199977982539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5b1d6b6d3f7%3A0x5b8d5f536f5c8c6!2sGoogleplex!5e0!3m2!1ses!2sus!4v1635742119791!5m2!1ses!2sus" loading="lazy"></iframe>
+            </div>
+            <div class="tienda">
+                <img src="img/tienda3.jpg" alt="Tienda Sur">
+                <h3>Tienda Sur</h3>
+                <p>Dirección: Avenida Secundaria #789, Ciudad</p>
+                <p>Teléfono: (555) 123-4567</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.839846274078!2d-122.08424948469217!3d37.42199977982539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5b1d6b6d3f7%3A0x5b8d5f536f5c8c6!2sGoogleplex!5e0!3m2!1ses!2sus!4v1635742119791!5m2!1ses!2sus" loading="lazy"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Sena Store Web</p>
+    </footer>
+    <script src="js/carrito.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Sena Store Web</title>
+    <link rel="stylesheet" href="Css\styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/Logostore.png" alt="Logo">
+            </div>
+            <div class="titulo">
+                <h1>SENA STORE WEB</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="informacion.html">Información</a></li>
+                    <li><a href="Iniciosesion.html">Iniciar sesion</a></li>
+                    <li>
+                        <div class="carrito-container" id="carrito">
+                            <img src="img/carrito.png" alt="Carrito de Compras" class="carrito-icon">
+                            <span id="cart-count" class="cart-count">0</span>
+                            <!-- Contenido desplegable del carrito -->
+                            <div id="cartDropdown" class="cart-dropdown">
+                                <p id="cart-items">Cantidad de productos: 0</p>
+                                <hr class="separador"> <!-- Línea de separación -->
+                                <p id="cart-total">Precio total: $0</p>
+                                <button id="pagar-btn" onclick="location.href='Iniciosesion.html'">Pagar</button>
+                            </div>
+                        </div>
+                        
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <br>
+    <br>
+    <main>
+        <section class="formulario">
+            <h2>Registro</h2>
+            <form action="registro.php" method="POST">
+                <div class="form-grupo">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-grupo">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-grupo">
+                    <label for="password">Contraseña:</label>
+                    <div class="password-container">
+                        <input type="password" id="password" name="password" required>
+                        <span class="toggle-password" onclick="togglePassword()">
+                            👁️
+                        </span>
+                    </div>
+                </div>
+                <div class="form-grupo">
+                    <button type="submit">Registrarse</button>
+                </div>
+            </form>
+            <h3>¿No puedes iniciar sesion?</h3>
+            <p><a href="recuperarcontraseña.html">Recuperar contraseña</a></p>
+            <h3>¿Ya tienes cuenta?</h3>
+            <p><a href="Iniciosesion.html">Inicia sesión</a></p>
+        </section>
+        <script src="js\ojo.js"></script>
+    </main>
+    <br>
+    <br>
+    <footer>
+        <p>&copy; 2024 Sena Store Web</p>
+    </footer>
+</body>
+</html>

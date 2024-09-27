@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantalón Caqui - Sena Store Web</title>
+    <link rel="stylesheet" href="Css/styles2.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/Logostore.png" alt="Logo">
+            </div>
+            <div class="titulo">
+                <h1>SENA STORE WEB</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="informacion.html">Información</a></li>
+                    <li><a href="Iniciosesion.html">Iniciar sesión</a></li>
+                    <li>
+                        <div class="carrito-container" id="carrito">
+                            <img src="img/carrito.png" alt="Carrito de Compras" class="carrito-icon">
+                            <span id="cart-count" class="cart-count">0</span>
+                            <!-- Contenido desplegable del carrito -->
+                            <div id="cartDropdown" class="cart-dropdown">
+                                <p id="cart-items">Cantidad de productos: 0</p>
+                                <hr class="separador"> <!-- Línea de separación -->
+                                <p id="cart-total">Precio total: $0</p>
+                                <button id="pagar-btn" onclick="location.href='Iniciosesion.html'">Pagar</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="productos-lista">
+            <div class="productos">
+                <div class="producto">
+                    <img src="img/pantalondiario2.png" alt="Pantalón Caqui" width="300" height="400">
+                    <div class="producto-info">
+                        <center>
+                            <h4>Pantalón Caqui</h4>
+                        </center>
+                        <p>Jean tipo caqui para hombre, con bota recta, bolsillos laterales funcionales, tiro bajo, botón metálico y silueta ligeramente holgada.</p>
+                        <center>
+                            <h5><label for="Tallas">Tallas:</label></h5>
+                        </center>
+                        <select name="" id="">
+                            <option value="28">28</option>
+                            <option value="30">30</option>
+                            <option value="32">32</option>
+                            <option value="34">34</option>
+                            <option value="36">36</option>
+                        </select>
+                        <br>
+                        <p>Disponible en tallas 28, 30, 32, y 34.</p>
+                        <center>
+                            <h5><label for="cantidad">CANTIDAD:</label></h5>
+                            <h5><span id="valor2">0</span></h5>
+                            <h5><label for="precio2">VALOR:</label></h5>
+                            <h5><span id="total2">$80.000</span></h5>
+                            <br>
+                            <script src="js/script2.js"></script>
+                        </center>
+                        <p>¡No te quedes sin el tuyo! Ofrecemos envíos rápidos y garantía de satisfacción.</p>
+                        <button type="button" class="btn" onclick="incremento2('valor2','total2',80000)">Sumar</button>
+                        <button type="button" class="btn" onclick="decremento2('valor2','total2',80000)">Restar</button>
+                        <center>
+                            <a href="Iniciosesion.html"><button class="btn" onclick="agregarAlCarrito('valor2', 80000 ,'pantalon caqui')">Agregar al carrito</button></a>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="chatIcon" class="chat-icon" onclick="toggleChat()">💬</div>
+
+    <div id="chatBox" class="chat-box">
+        <div class="chat-header">
+            <span>Chatbot</span>
+            <button class="close-btn" onclick="toggleChat()">X</button>
+        </div>
+        <div id="chatContent" class="chat-content"></div>
+        <div id="options" class="chat-options">
+            <button onclick="chooseOption('tallas')">Tallas</button>
+            <button onclick="chooseOption('precios')">Precios</button>
+            <button onclick="chooseOption('envíos')">Envíos</button>
+            <button onclick="chooseOption('ubicacion')">Ubicación</button>
+            <button onclick="chooseOption('contacto')">Contacto</button>
+            <button onclick="chooseOption('personalización')">Personalización</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Sena Store Web</p>
+    </footer>
+
+    <script src="js/carrito.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>

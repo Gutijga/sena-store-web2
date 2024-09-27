@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - Sena Store Web</title>
+    <link rel="stylesheet" href="Css\styles3.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/Logostore.png" alt="Logo">
+            </div>
+            <div class="titulo">
+                <h1>SENA STORE WEB</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="informacion.html">Información</a></li>
+                    <li><a href="Iniciosesion.html">Iniciar sesión</a></li>
+                    <li>
+                        <div class="carrito-container" id="carrito">
+                            <img src="img/carrito.png" alt="Carrito de Compras" class="carrito-icon">
+                            <span id="cart-count" class="cart-count">0</span>
+                            <!-- Contenido desplegable del carrito -->
+                            <div id="cartDropdown" class="cart-dropdown">
+                                <p id="cart-items">Cantidad de productos: 0</p>
+                                <hr class="separador"> <!-- Línea de separación -->
+                                <p id="cart-total">Precio total: $0</p>
+                                <button id="pagar-btn" onclick="location.href='Iniciosesion.html'">Pagar</button>
+                            </div>
+                        </div>
+                        <script src="js/carrito.js"></script>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2>Factura</h2>
+        <div id="factura">
+            <table id="tabla-factura">
+                <thead>
+                    <tr>
+                        <th>Nombre del Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unitario</th>
+                        <th>Precio Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se agregarán dinámicamente las filas de productos -->
+                </tbody>
+            </table>
+            <hr class="separador"> <!-- Línea de separación -->
+            <div id="factura-total">
+                <strong>Total: $0</strong>
+            </div>
+        </div>
+    </main>
+    <script>
+        // Función para actualizar el contenido del carrito y la factura en el main
+function actualizarCarrito() {
+    const cartItemsElement = document.getElementById('cart-items');
+    const cartTotalElement = document.getElementById('cart-total');
+    const facturaTableBody = document.querySelector('#tabla-factura tbody');
+    const facturaTotalElement = document.getElementById('factura-total');
+
+    let totalPrecio = 0;
+    let cartHTML = '';
+    let facturaHTML = '';
+
+    carrito.forEach((producto, index) => {
+        // Crear HTML para cada producto en el dropdown del carrito
+        cartHTML += `
+            <div style="margin-bottom: 15px;">
+                <strong>${index + 1}. ${producto.nombre}</strong><br>
+                <span>Cantidad: ${producto.cantidad}</span><br>
+                <span>Precio: $${(producto.precio / producto.cantidad).toFixed(2)}</span>
+            </div>
+        `;
+        totalPrecio += producto.precio;
+
+        // Crear filas para la tabla de la factura
+        facturaHTML += `
+            <tr>
+                <td>${producto.nombre}</td>
+                <td>${producto.cantidad}</td>
+                <td>$${(producto.precio / producto.cantidad).toFixed(2)}</td>
+                <td>$${producto.precio.toFixed(2)}</td>
+            </tr>
+        `;
+    });
+
+    // Actualizar el contenido del carrito en el dropdown
+    cartItemsElement.innerHTML = cartHTML;
+    cartTotalElement.textContent = 'Precio total: $' + totalPrecio.toFixed(2);
+
+    // Actualizar la tabla de la factura
+    facturaTableBody.innerHTML = facturaHTML;
+
+    // Mostrar el precio total en la factura
+    facturaTotalElement.innerHTML = `<strong>Total: $${totalPrecio.toFixed(2)}</strong>`;
+
+    // Actualizar las variables globales
+    totalProductos = carrito.reduce((sum, producto) => sum + producto.cantidad, 0);
+    document.getElementById('cart-count').textContent = totalProductos;
+}
+
+
+    </script>
+    <div id="chatIcon" class="chat-icon" onclick="toggleChat()">
+        💬
+    </div>
+
+    <!-- Ventana del chat -->
+    <div id="chatBox" class="chat-box">
+        <div class="chat-header">
+            <span>Chatbot</span>
+            <button class="close-btn" onclick="toggleChat()">X</button>
+        </div>
+        <div id="chatContent" class="chat-content">
+            <!-- Aquí irán los mensajes del chat -->
+        </div>
+        <div id="options" class="chat-options">
+            <!-- Opciones de preguntas -->
+            <button onclick="chooseOption('tallas')">Tallas</button>
+            <button onclick="chooseOption('precios')">Precios</button>
+            <button onclick="chooseOption('envíos')">Envíos</button>
+            <button onclick="chooseOption('ubicacion')">Ubicacion</button>
+            <button onclick="chooseOption('contacto')">Contacto</button>
+            <button onclick="chooseOption('personalización')">Personalización</button>
+        </div>
+    </div>
+    <br>
+
+<script src="js\chat.js"></script>
+    <footer>
+        <p>&copy; 2024 Sena Store Web</p>
+    </footer>
+ 
+</body>
+</html>

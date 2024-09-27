@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Sena Store Web</title>
+    <link rel="stylesheet" href="Css\styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="img/Logostore.png" alt="Logo">
+            </div>
+            <div class="titulo">
+                <h1>SENA STORE WEB</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="informacion.html">Información</a></li>
+                    <li><a href="Iniciosesion.html">Iniciar sesion</a></li>
+                    <li>
+                        <div class="carrito-container" id="carrito">
+                            <img src="img/carrito.png" alt="Carrito de Compras" class="carrito-icon">
+                            <span id="cart-count" class="cart-count">0</span>
+                            <!-- Contenido desplegable del carrito -->
+                            <div id="cartDropdown" class="cart-dropdown">
+                                <p id="cart-items">Cantidad de productos: 0</p>
+                                <hr class="separador"> <!-- Línea de separación -->
+                                <p id="cart-total">Precio total: $0</p>
+                                <button id="pagar-btn" onclick="location.href='Iniciosesion.html'">Pagar</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Bienvenidos</h1>
+            <p>Encuentra la mejor undimentaria aqui.</p>
+            <a href="tiendas.html" class="boton-tiendas">Tiendas</a>
+        </section>
+        <section class="images">
+            <div class="carousel-container">
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <div class="carousel">
+                    <img src="img\img0.jpeg" class="carousel-slide">
+                    <img src="img\img1.jpeg" class="carousel-slide">
+                    <img src="img\img2.jpeg" class="carousel-slide">
+                    <img src="img\img3.jpeg" class="carousel-slide">
+                    <img src="img\img4.jpeg" class="carousel-slide">
+                 </div>
+                     <button class="next" onclick="moveSlide(1)">&#10095;</button>
+                 </div>
+            <br>
+        
+            <script src="js\carrusel.js"></script>
+        </section> 
+    
+    
+        <div id="chatIcon" class="chat-icon" onclick="toggleChat()">
+            💬
+        </div>
+    
+        <!-- Ventana del chat -->
+        <div id="chatBox" class="chat-box">
+            <div class="chat-header">
+                <span>Chatbot</span>
+                <button class="close-btn" onclick="toggleChat()">X</button>
+            </div>
+            <div id="chatContent" class="chat-content">
+                <!-- Aquí irán los mensajes del chat -->
+            </div>
+            <div id="options" class="chat-options">
+                <!-- Opciones de preguntas -->
+                <button onclick="chooseOption('tallas')">Tallas</button>
+                <button onclick="chooseOption('precios')">Precios</button>
+                <button onclick="chooseOption('envíos')">Envíos</button>
+                <button onclick="chooseOption('ubicacion')">Ubicacion</button>
+                <button onclick="chooseOption('contacto')">Contacto</button>
+                <button onclick="chooseOption('personalización')">Personalización</button>
+            </div>
+        </div>
+        <br>
+    
+    <script src="js\chat.js"></script>
+
+    <section class="form-section">
+        <div class="container-star">
+            <h2>Califica nuestra página</h2>
+            <form action="calificacion.php" method="post">
+                <div class="rating-star"> 
+                    <input type="radio" name="stars" id="star5" value="5">
+                    <label for="star5">★</label>
+                    <input type="radio" name="stars" id="star4" value="4">
+                    <label for="star4">★</label>
+                    <input type="radio" name="stars" id="star3" value="3">
+                    <label for="star3">★</label>
+                    <input type="radio" name="stars" id="star2" value="2">
+                    <label for="star2">★</label>
+                    <input type="radio" name="stars" id="star1" value="1">
+                    <label for="star1">★</label>
+                </div>
+                <br>
+                <textarea name="comments-star" rows="4" cols="50" placeholder="Deja tus comentarios aquí..."></textarea>
+                <br><br>
+                <button type="submit" class="submit-star">Enviar</button>
+            </form>
+        </div>
+    </section>
+    <br>
+
+    </main>
+    <footer>
+        <p>&copy; 2024 Sena Store Web</p> 
+    </footer>
+    <script src="js/carrito.js"></script>
+</body>
+</html>
