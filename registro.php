@@ -1,9 +1,9 @@
 <?php
 // Conexión a la base de datos
-$servername = "localhost"; // Servidor local
-$username = "root"; // Nombre de usuario, cámbialo si es necesario
-$password = ""; // Contraseña del usuario, cámbiala si es necesario
-$dbname = "sena store web"; // Nombre de tu base de datos
+$servername = "btlaynz5cwsyy7daqqaw-mysql.services.clever-cloud.com"; // Servidor local
+$username = "u5o278ogjyekr5ou"; // Nombre de usuario, cámbialo si es necesario
+$password = "WveW6cDs5mnsr8uw1JXn"; // Contraseña del usuario, cámbiala si es necesario
+$dbname = "btlaynz5cwsyy7daqqaw"; // Nombre de tu base de datos
 
 // Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
